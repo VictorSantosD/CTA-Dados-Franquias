@@ -1,0 +1,42 @@
+CCAA | CENTRAL DE ATENDIMENTO — PROJETO EDITÁVEL
+
+COMO ABRIR
+1. Extraia todo o ZIP em uma pasta de sua escolha.
+2. Abra index.html no Chrome ou Edge. Mantenha as subpastas ao lado do HTML.
+3. Para manutenção, abra a pasta inteira pelo VS Code (Arquivo > Abrir Pasta).
+
+ARQUIVOS
+index.html       Estrutura da página e filtros.
+css/style.css    Cores, espaçamento e responsividade.
+js/app.js        Pesquisa, importação, conferência e exportação.
+js/data.js       Base inicial de 560 registros da tabela TB_Dados.
+assets/logo.svg  Logo enviada pelo usuário. Substitua este arquivo, mantendo o nome,
+                 ou altere o caminho do atributo src da imagem no index.html.
+
+MENSAGEM PADRÃO
+Em js/app.js, procure a função buildMessage. Edite o texto entre crases.
+${r.NomeUnidade} insere o nome da unidade; ${r.LinkWhatsApp} insere o link original.
+A mensagem mantém links incompletos e links que não abriram, como solicitado.
+
+CONFERÊNCIA
+Abra o WhatsApp manualmente e clique em Abriu ou Não abriu. Não há envio automático.
+A marcação Não abriu aparece em vermelho na lista e no filtro correspondente.
+Exportar pendências gera CSV apenas com unidades marcadas como Não abriu.
+Exportar conferência gera CSV de todos os registros.
+A marcação é por unidade e link; quando o link muda na base, o novo link fica pendente.
+Os resultados ficam no armazenamento local do navegador, quando permitido.
+Não há sincronização entre usuários, navegadores ou computadores. Cada atendente deve
+exportar suas pendências para o responsável pela base. Não abra o CSV como arquivo público.
+As marcações da versão anterior, por número, não são transferidas para esta versão.
+
+DADOS
+A opção Atualizar planilha importa o XLSX local e lê a tabela TB_Dados.
+A atualização ocorre apenas na sessão; não altera a planilha original nem js/data.js.
+Ao reabrir a página, a base inicial volta; importe o Excel atualizado novamente.
+Use Chrome/Edge atual. Não é necessário conectar ao SharePoint.
+O formato do link não comprova que existe uma conta no WhatsApp.
+
+PRIVACIDADE
+A base é de uso interno. O projeto contém os dados das franquias, portanto não publique
+em repositórios públicos. A página não envia a base a servidores externos. Os botões
+WhatsApp e mapas abrem os respectivos serviços externos quando acionados.

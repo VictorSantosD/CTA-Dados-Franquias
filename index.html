@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+ <head>
+  <meta charset="utf-8"/>
+  <meta content="width=device-width, initial-scale=1" name="viewport"/>
+  <title>
+   CCAA | Central de Atendimento
+  </title>
+  <link href="css/style.css" rel="stylesheet"/>
+ </head>
+ <body>
+  <header class="top">
+   <div class="topinner">
+    <img alt="CCAA" class="brand" src="assets/logo.svg"/>
+    <div>
+     <h1>
+      Central de Atendimento
+     </h1>
+     <p>
+      Diretório de franquias • Consulta interna
+     </p>
+    </div>
+    <div class="topactions">
+     <button class="btn" id="importBtn">
+      ↑ Atualizar planilha
+     </button>
+     <button class="btn" id="exportBtn">
+      ↓ Exportar conferência
+     </button>
+     <button class="btn" id="exportFailedBtn">↓ Exportar pendências</button>
+     <input accept=".xlsx" class="fileinput" id="file" type="file"/>
+    </div>
+   </div>
+  </header>
+  <main class="wrap">
+   <div class="intro">
+    <div>
+     <p class="eyebrow">
+      Diretório de unidades
+     </p>
+     <h2>
+      Encontre uma franquia
+     </h2>
+     <p>
+      Consulte os contatos da rede em um só lugar.
+     </p>
+    </div>
+    <div class="source" id="source">
+    </div>
+   </div>
+   <div class="notice" id="notice" role="status">
+   </div>
+   <div class="stats" id="stats">
+   </div>
+   <div class="layout">
+    <section class="panel searchpanel" id="searchpanel">
+     <h3>
+      Pesquisar unidades
+     </h3>
+     <div class="search">
+      <span aria-hidden="true" class="mag">
+       ⌕
+      </span>
+      <input aria-label="Pesquisar unidades" autocomplete="off" id="query" placeholder="Nome, cidade, bairro, telefone…" type="search"/>
+      <button aria-label="Limpar pesquisa" class="clear" id="clear">
+       ×
+      </button>
+     </div>
+     <div class="filters">
+      <div>
+       <label for="uf">
+        Estado
+       </label>
+       <select id="uf">
+       </select>
+      </div>
+      <div>
+       <label for="filter">
+        WhatsApp
+       </label>
+       <select id="filter">
+        <option value="all">
+         Todos
+        </option>
+        <option value="valid">
+         Formato válido
+        </option>
+        <option value="review">
+         Requer revisão
+        </option>
+        <option value="pending">
+         Pendente de teste
+        </option>
+        <option value="confirmed">
+         Conversa abriu
+        </option>
+        <option value="failed">
+         Não abriu · atualizar
+        </option>
+       </select>
+      </div>
+     </div>
+     <div class="count">
+      <span aria-live="polite" id="count">
+      </span>
+      <span>
+       Nome A–Z
+      </span>
+     </div>
+     <div class="results" id="results">
+     </div>
+     <div class="paging">
+      <button class="btn" id="prev">
+       ‹ Anterior
+      </button>
+      <span id="page">
+      </span>
+      <button class="btn" id="next">
+       Próxima ›
+      </button>
+     </div>
+     <details class="help">
+      <summary>
+       Como atualizar a base?
+      </summary>
+      <p>
+       Baixe o Excel atualizado do SharePoint e clique em “Atualizar planilha”. O arquivo é lido no navegador, sem transmissão dos dados. A base importada vale nesta sessão; ao reabrir este HTML, importe novamente se necessário.
+      </p>
+     </details>
+    </section>
+    <section aria-label="Dados da unidade" class="panel detail" id="detail">
+    </section>
+   </div>
+   <footer class="foot">
+    <p>
+     Uso interno • Origem: TB_Dados · Base de Dados
+    </p>
+    <p>
+     Formato válido não comprova cadastro ativo no WhatsApp.
+    </p>
+   </footer>
+  </main>
+  <div class="toast" hidden="" id="toast" role="status">
+  </div>
+  <script src="js/data.js">
+  </script>
+  <script src="js/app.js">
+  </script>
+ </body>
+</html>

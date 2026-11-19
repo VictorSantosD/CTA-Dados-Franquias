@@ -1,0 +1,13 @@
+js/data.js
+*.xlsx
+*.xls
+*.csv
+*.zip
+.env
+.env.*
+node_modules/
+__pycache__/
+.DS_Store
+Thumbs.db
+Central_CCAA_Atualizada.html
+Central_de_Atendimento_CCAA.html
