@@ -1,1 +1,0 @@
-# CTA-Dados-Franquias
